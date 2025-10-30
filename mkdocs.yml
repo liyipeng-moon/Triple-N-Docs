@@ -1,0 +1,8 @@
+site_name: My Dataset Documentation
+
+theme:
+  name: material
+
+nav:
+  - MAIN: README.md
+  - Overall: README2.md
