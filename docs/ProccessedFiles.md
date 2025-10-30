@@ -26,7 +26,7 @@ Contains processed spike information and some meta-data.
 | `response_matrix_img` | [image_idx × time_point] | PSTH matrix with a 20ms box bin |
 | `qm` | [1 × n_metric] | Quality metric from BombCell |
 | `spiketime_ms` | [1 × n_spikes] | Spike train time point relative to stimuli train |
-| `waveform` | [7 Chan × 61 Sample] | Spike waveform |
+| `waveform` | [n Chan × 61 Sample] | Spike waveform |
 
 note: `trial_idx` here correspond to all valid trials (i.e. `meta_data.trial_valid_idx(meta_data.trial_valid_idx~=0)`)
 

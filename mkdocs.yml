@@ -6,6 +6,7 @@ theme:
 nav:
   - General: index.md
   - How to get data: howtogetdata.md
+  - Raw Data: RawData.md
   - Processed Files: ProccessedFiles.md
   - MetaData: MetaData.md
   - Code: Code.md

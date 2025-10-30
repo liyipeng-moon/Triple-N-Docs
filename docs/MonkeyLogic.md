@@ -1,3 +1,4 @@
-## Behavioral Control
+## MonkeyLogic
 
-We use MonkeyLogic for behavioral control: [MonkeyLogic website](https://monkeylogic.nimh.nih.gov/)
+We use a matlab-based software, [MonkeyLogic](https://monkeylogic.nimh.nih.gov/) for behavioral control.
+

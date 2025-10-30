@@ -1,5 +1,7 @@
 # MetaData about each session
 
+We have some meta-data about each session, mainly 
+
 ### ROI Definition File: `exclude_area.xls`
 Contains manually defined Regions of Interest (ROIs) for each session.
 
