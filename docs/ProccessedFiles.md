@@ -1,12 +1,3 @@
-# Triple-N Dataset Documentation
-
-Non-human Primate Neural Responses to Natural Scenes
-
-Ref: https://www.biorxiv.org/content/10.1101/2025.05.06.652408v1
-Contact: moonl@pku.edu.cn
-
-This document is currently under development to ensure clarity and ease of understanding. Your feedback is invaluable—please feel free to raise an issue or email me with any suggestions or points needing clarification.
-
 ## File Structure
 For each recording session, three file types are provided:
 
@@ -79,47 +70,3 @@ Contains unit-wise processed information.
 | `snr`, `snr_max` | [1 × unit_num] | Signal-to-noise ratios <br> - max: calculated by most preferred stimuli|
 | `UnitType` | [1 × unit_num] | Unit type from BombCell: <br>1: Single Unit<br>2: MUA<br>3-4: Non-somatic |
 
----
-
-### ROI Definition File: `exclude_area.xls`
-Contains manually defined Regions of Interest (ROIs) for each session.
-
-- One row = one ROI
-- Single session may contain multiple ROIs (e.g., session 11 has object area at tip + unknown areas)
-
-### File Columns
-| Column | Description | Example Values |
-|--------|-------------|----------------|
-| `SesIdx` | Session number | 11, 12, 13... |
-| `y1` | ROI start position (shank coordinate) | 1200 (μm) |
-| `y2` | ROI end position (shank coordinate) | 1800 (μm) |
-| `arealabel` | Area Label | See full list below, with number corresponding to subject idx |
-| `ROIIndex` | ROI identifier | Links to 3D coordinates in another file |
-
-### Area Label Key
-**Body Face Object**:
-- `MB`: Middle body (MSB)
-- `AB`: Anterior body (ASB)
-- `MF`: Middle face (ML)
-- `AF`: Anterior face (AL)
-- `MO`: Middle object (MLO)
- - `MO1s1` and `MO1s2` correspond 2 subregions of MO1
-- `AO`: Anterior object (ALO)
-
-**Other Areas**:
-- `LPP`: Lateral place patch
-- `PITP`: Posterior inferotemporal place patch
-- `CLC`: Central lateral color area
-- `AMC`: Anterior medial color area
-
----
-
-## Code
-
-### script
-code for analyze and generate figures in the paper
-
-### demo code
-not related to paper, just a going-through demo
- - demo1, generating single unit raster plot for several images
- - demo2, generating populational preference of interested ROI

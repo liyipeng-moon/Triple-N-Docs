@@ -1,8 +1,12 @@
-site_name: My Dataset Documentation
+site_name: Triple-N Dataset Documentation
 
 theme:
   name: material
 
 nav:
-  - MAIN: README.md
-  - Overall: README2.md
+  - General: index.md
+  - How to get data: howtogetdata.md
+  - Processed Files: ProccessedFiles.md
+  - MetaData: MetaData.md
+  - Code: Code.md
+  - Behavioral Software: MonkeyLogic.md
