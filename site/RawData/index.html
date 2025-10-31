@@ -9,8 +9,10 @@
       
       
       
-        <link rel="prev" href="../Code/">
+        <link rel="prev" href="../howtogetdata/">
       
+      
+        <link rel="next" href="../ProccessedFiles/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -18,7 +20,7 @@
     
     
       
-        <title>Behavioral Software - Triple-N Dataset Documentation</title>
+        <title>Raw Data - Triple-N Dataset Documentation</title>
       
     
     
@@ -60,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#monkeylogic" class="md-skip">
+        <a href="#raw-data-structure-and-preprocessing" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Behavioral Software
+              Raw Data
             
           </span>
         </div>
@@ -233,10 +235,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../RawData/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Raw Data
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -247,6 +271,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#npx_-folder-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      NPX_ folder contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bhv-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      .bhv file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processed" class="md-nav__link">
+    <span class="md-ellipsis">
+      processed
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -321,30 +392,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Behavioral Software
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../MonkeyLogic/" class="md-nav__link">
         
   
   
@@ -355,33 +406,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#monkeylogic" class="md-nav__link">
-    <span class="md-ellipsis">
-      MonkeyLogic
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -403,6 +427,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -411,9 +437,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#monkeylogic" class="md-nav__link">
+  <a href="#npx_-folder-contents" class="md-nav__link">
     <span class="md-ellipsis">
-      MonkeyLogic
+      NPX_ folder contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bhv-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      .bhv file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processed" class="md-nav__link">
+    <span class="md-ellipsis">
+      processed
     </span>
   </a>
   
@@ -435,10 +479,34 @@
 
 
 
-  <h1>Behavioral Software</h1>
-
-<h2 id="monkeylogic">MonkeyLogic</h2>
-<p>We use a matlab-based software, <a href="https://monkeylogic.nimh.nih.gov/">MonkeyLogic</a> for behavioral control.</p>
+<h1 id="raw-data-structure-and-preprocessing">Raw Data Structure and Preprocessing</h1>
+<p>The raw data are saved at <code>'xxx'</code>, with each session organized by recording day and session index(if one day with multiple sessions). Within each session folder, there are:</p>
+<ul>
+<li><strong>kilosort_def_5block_97</strong> – Contains the output of Kilosort 4  </li>
+<li><strong>LFPprep</strong> – Contains the preprocessed LFP signals  </li>
+<li><strong>NPX_XXDDDDDD…</strong> – <code>XX</code> corresponds to the subject name, and <code>DDDDDD</code> corresponds to the recording day  </li>
+<li><strong>processed</strong> – Contains processed data and converted files  </li>
+<li>One <code>.bhv</code> file – Recorded with MonkeyLogic (ML) software</li>
+</ul>
+<hr />
+<h2 id="npx_-folder-contents"><strong>NPX_ folder contents</strong></h2>
+<p>The <code>NPX_</code> folder, recorded with SpikeGLX, contains multiple files organized into three streams. Each stream includes a <code>.bin</code> file and its corresponding <code>.meta</code> file, which stores metadata such as sampling rate and gain.  </p>
+<ul>
+<li><strong>Streams:</strong></li>
+<li><strong>ap</strong> – Active potential (spike) data  </li>
+<li><strong>lf</strong> – Local field potential (LFP) data  </li>
+<li><strong>ni</strong> – Additional task-related inputs (named <code>ni</code> because the data are recorded via a National Instruments card), such as event codes sent from the stimulus computer to the electrophysiology computer, and analog input from the photodiode.</li>
+</ul>
+<hr />
+<h2 id="bhv-file"><strong>.bhv file</strong></h2>
+<ul>
+<li>Recorded with MonkeyLogic (ML) software  </li>
+<li>Can be loaded using the <code>mlread</code> function provided by ML, for convenience, a converted <code>.mat</code> version is also provided in the <code>processed</code> folder</li>
+</ul>
+<h2 id="processed"><strong>processed</strong></h2>
+<ul>
+<li>Within each processed folder, there are:</li>
+</ul>
 
 
 
