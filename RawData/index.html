@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../howtogetdata/">
+        <link rel="prev" href="../Download/">
       
       
         <link rel="next" href="../ProccessedFiles/">
@@ -216,7 +216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../howtogetdata/" class="md-nav__link">
+      <a href="../Download/" class="md-nav__link">
         
   
   
@@ -395,7 +395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../Data%20Acquisition%20Software/" class="md-nav__link">
+      <a href="../DataAcquisitionSoftware/" class="md-nav__link">
         
   
   
@@ -480,7 +480,9 @@
 
 
 <h1 id="raw-data-structure-and-preprocessing">Raw Data Structure and Preprocessing</h1>
-<p>The raw data are saved at <code>'xxx'</code>, with each session organized by recording day and session index(if one day with multiple sessions). Within each session folder, there are:</p>
+<p>The raw data are saved at <code>/Raw</code>, with each session organized by recording day and session index (if one day with multiple sessions).<br />
+Raw session folder are compressed into a tar.gz file dur to limitations of the platform. You can extract them by tools like 7-zip.</p>
+<p>Within each session folder, there are:</p>
 <ul>
 <li><strong>NPX_XXDDDDDD_exp_gx Folder</strong> – Raw electrophysiology data recorded using SpikeGLX, with XX denotes the subject name and DDDDDD denotes the recording date.</li>
 <li><strong>.bhv file</strong> – Behabioral data recorded with MonkeyLogic (ML) software  </li>
@@ -495,16 +497,27 @@
   1. <strong>ap</strong> – Active potential (spike) datam, ~30 kHz sampling.<br />
   2. <strong>lf</strong> – Local field potential (LFP) data, 2.5 kHz.<br />
   3. <strong>ni</strong> – Auxiliary task-related inputs (~10 kHz), recorded via a National Instruments card PXI6341, such as event codes sent from the stimulus computer, and analog input from the photodiode. Sampling at 10000Hz.  </p>
+<p><strong>Inspecting Neuropixel Data</strong><br />
+You can download SpileGLX <a href="https://billkarsh.github.io/SpikeGLX/App/Release_v20250915-api4.zip">here</a>, and direct open the <code>.bin</code> file with <code>Open File Viewer</code>. Detailed info can be found <a href="https://billkarsh.github.io/SpikeGLX/Sgl_help/UserManual.html#offline-file-viewer">here</a>. If you don't have a NI drive in your PC, you need to use <code>SpikeGLX_NISiM.exe</code> instead of <code>SpikeGLX.exe</code></p>
 <hr />
 <h2 id="bhv-file"><strong>.bhv file</strong></h2>
 <ul>
 <li>Recorded with MonkeyLogic (ML) software, containing stimuli order, eye position, reward time..  </li>
 <li>Can be loaded using the <code>mlread</code> function provided by ML, for convenience, a converted <code>.mat</code> version is also provided in the <code>processed</code> folder</li>
 <li>When loaded into MATLAB, the data are stored as a structure indexed by ML trial. Note that multiple stimulus onsets (Stimulus Trials) occur within a single ML Trial.</li>
+<li>Official document of bhv file can be found <a href="https://monkeylogic.nimh.nih.gov/docs_GettingStarted.html#FormatsSupported">here</a>.</li>
 </ul>
 <h2 id="processed"><strong>processed</strong></h2>
 <ul>
 <li>Within each processed folder, there are:</li>
+<li><strong>BC</strong> – A Folder containing result of quality metric computed by <a href="https://github.com/Julie-Fabre/bombcell">BombCell</a>.</li>
+<li><strong>fscale.mat</strong> - A scaling factor transform int16 value into microvolt.</li>
+<li><strong>ML_YYMMDD_Subject_.mat</strong> – Converted MonkeyLogic bhv file into mat.</li>
+<li><strong>META_YYMMDD_Subject_NSD1000_LOC</strong> – Metadata about trial order, image onset time, eye monitor data and metadata from SpikeGLX .meta file. This file is the output of preprocessing script step1.</li>
+<li><strong>GoodUnitRaw_YYMMDD_Subject_NSD1000_LOC.mat</strong> - The raw spike time, quality metric and necessary meta data. This file is the output of preprocessing script step2.</li>
+<li><strong>GoodUnit_YYMMDD_Subject_NSD1000_LOC_g2</strong> - Goodunit file, the output if preprocessing step3, you can find detailed info <a href="">here</a>.</li>
+<li><strong>GoodLFP__YYMMDD_Subject_NSD1000_LOC_g2</strong> - Processed file of local field potential data.</li>
+<li>Some figure for quality accessment during pre-processing pipeline.</li>
 </ul>
 
 
