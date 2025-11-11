@@ -33,7 +33,8 @@ note: `trial_idx` here correspond to all valid trials (i.e. `meta_data.trial_val
 ---
 
 ### 2. H5 Files
-Better format for faster data access relative to matlab GoodUnitStrc. Fetch with matlab:
+Better format for faster data access relative to matlab GoodUnitStrc.  Due to file size limit of the platform, you can generate them by yourself running the `S0_ConvertMatTOh5.m` in the preprocessing pipeline. 
+Fetch with matlab:
 ```
     h5read('xxx', '/field')
 ```
@@ -47,8 +48,6 @@ Better format for faster data access relative to matlab GoodUnitStrc. Fetch with
 | `raster_matrix_img` | [unit_num × trial_idx × time_point] | Same as GoodUnitStrc
  |
 | `response_matrix_img` | [unit_num × image_idx × time_point] | Same as GoodUnitStrc |
-
-
 
 ---
 

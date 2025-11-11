@@ -5,9 +5,9 @@ theme:
 
 nav:
   - General: index.md
-  - How to get data: howtogetdata.md
+  - How to get data: Download.md
   - Raw Data: RawData.md
   - Processed Files: ProccessedFiles.md
   - MetaData: MetaData.md
   - Code: Code.md
-  - Data Acquisition Software: Data Acquisition Software.md
+  - Data Acquisition Software: DataAcquisitionSoftware.md
