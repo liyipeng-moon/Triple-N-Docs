@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>MetaData and Location - Triple-N Dataset Documentation</title>
+    <title>Acknowledgement - Triple-N Dataset Documentation</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "MetaData and Location";
-        var mkdocs_page_input_path = "MetaData.md";
+        var mkdocs_page_name = "Acknowledgement";
+        var mkdocs_page_input_path = "Acknowledgement.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -55,20 +55,8 @@
                 <li class="toctree-l1"><a class="reference internal" href="../ProccessedFiles/">Processed Files</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">MetaData and Location</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#exclude_areaxls-roi-definition-file">exclude_area.xls: ROI definition File</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#file-columns">File Columns</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#area-label-key">Area Label Key</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#areaxyzxlsx-location-in-nmt-template">AreaXYZ.xlsx: location in NMT template</a>
-    </li>
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../MetaData/">MetaData and Location</a>
                 </li>
               </ul>
               <ul>
@@ -79,8 +67,14 @@
                 <li class="toctree-l1"><a class="reference internal" href="../DataAcquisitionSoftware/">Data Acquisition Software</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../Acknowledgement/">Acknowledgement</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Acknowledgement</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#mri-center-at-peking-university">MRI center at Peking University:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#funding">Funding:</a>
+    </li>
+    </ul>
                 </li>
               </ul>
       </div>
@@ -97,7 +91,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">MetaData and Location</li>
+      <li class="breadcrumb-item active">Acknowledgement</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -106,122 +100,22 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="metadata-and-anatomical-location-about-each-session">MetaData and anatomical location about each session</h1>
-<p>For each session, we have meta-data about recording locations: </p>
-<h2 id="exclude_areaxls-roi-definition-file"><code>exclude_area.xls</code>: ROI definition File</h2>
-<p>Contains manually defined Regions of Interest (ROIs) for each session.</p>
-<ul>
-<li>One row = one ROI</li>
-<li>Single session may contain multiple ROIs (e.g., session 11 has object area at tip + unknown areas)</li>
-</ul>
-<h4 id="file-columns">File Columns</h4>
-<table>
-<thead>
-<tr>
-<th>Column</th>
-<th>Description</th>
-<th>Example Values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>SesIdx</code></td>
-<td>Session number</td>
-<td>11, 12, 13...</td>
-</tr>
-<tr>
-<td><code>y1</code></td>
-<td>ROI start position (shank coordinate)</td>
-<td>1200 (μm)</td>
-</tr>
-<tr>
-<td><code>y2</code></td>
-<td>ROI end position (shank coordinate)</td>
-<td>1800 (μm)</td>
-</tr>
-<tr>
-<td><code>arealabel</code></td>
-<td>Area Label</td>
-<td>See full list below, with number corresponding to subject idx</td>
-</tr>
-<tr>
-<td><code>ROIIndex</code></td>
-<td>ROI identifier, index in AreaXYZ.xlsx</td>
-<td>1, 2,..</td>
-</tr>
-<tr>
-<td><code>Category</code></td>
-<td>Category to generate Figure 2</td>
-<td>F, O, B</td>
-</tr>
-<tr>
-<td><code>Area</code></td>
-<td>IT or EVC</td>
-<td>IT, EVC</td>
-</tr>
-</tbody>
-</table>
-<h4 id="area-label-key">Area Label Key</h4>
-<ul>
-<li><code>MB</code>: Middle body</li>
-<li><code>AB</code>: Anterior body</li>
-<li><code>MF</code>: Middle face</li>
-<li><code>AF</code>: Anterior face</li>
-<li><code>MO</code>: Middle object  </li>
-<li><code>MO1s1</code> and <code>MO1s2</code> correspond 2 subregions of MO1  </li>
-<li><code>AO</code>: Anterior object</li>
-<li><code>LPP</code>: Lateral place patch  </li>
-<li><code>PITP</code>: Posterior inferotemporal place patch  </li>
-<li><code>CLC</code>: Central lateral color area  </li>
-<li><code>AMC</code>: Anterior medial color area  </li>
-</ul>
-<h2 id="areaxyzxlsx-location-in-nmt-template"><code>AreaXYZ.xlsx</code>: location in NMT template</h2>
-<p>Contains registered location of each areas.</p>
-<p>One row = one area</p>
-<ul>
-<li>
-<table>
-<thead>
-<tr>
-<th>Column</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>AreaIDX</code></td>
-<td>ROI index, corresponding to 'ROIIndex' in exclude_area.xls</td>
-</tr>
-<tr>
-<td><code>Subject</code></td>
-<td>Subject Index</td>
-</tr>
-<tr>
-<td><code>R</code></td>
-<td>Right/Left, larger values indicate more rightward</td>
-</tr>
-<tr>
-<td><code>A</code></td>
-<td>Anterior/Posterior, larger values indicate more rightward</td>
-</tr>
-<tr>
-<td><code>S</code></td>
-<td>Superior/Inferior, larger values indicate more rightward</td>
-</tr>
-<tr>
-<td><code>Label</code></td>
-<td>Category label</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
+                <h1 id="acknowledgement">Acknowledgement</h1>
+<h3 id="mri-center-at-peking-university">MRI center at Peking University:</h3>
+<p>We thank National Center for Protein Sciences at Peking University in Beijing, China and Ms. Chunfang Yan for helping with collecting MRI and fMRI data.</p>
+<h3 id="funding">Funding:</h3>
+<p>National Science and Technology Innovation 2030 Major Projects, STI2030-Major Projects grant 2022ZD0204800.<br />
+Science Fund for Creative Research Groups of the National Natural Science Foundation of China T2421004.<br />
+Natural Science Foundation of China Grant NSFC32271081.<br />
+Natural Science Foundation of China Grant NSFC3223000016.<br />
+Natural Science Foundation of China Grant NSFC32200857.<br />
+China Postdoctoral Science Foundation Grant 2021M7400004.<br />
+China Postdoctoral Science Foundation Grant 2022T150021.  </p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../ProccessedFiles/" class="btn btn-neutral float-left" title="Processed Files"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../Code/" class="btn btn-neutral float-right" title="Code">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../DataAcquisitionSoftware/" class="btn btn-neutral float-left" title="Data Acquisition Software"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -244,10 +138,8 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../ProccessedFiles/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../DataAcquisitionSoftware/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../Code/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
