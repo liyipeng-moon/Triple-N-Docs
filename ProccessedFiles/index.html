@@ -55,14 +55,26 @@
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Processed Files</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#1-goodunit-files">1. GoodUnit Files</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#key-file-contents">Key File Contents</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#key-file-contents">Key File Contents</a>
+    <li class="toctree-l3"><a class="reference internal" href="#goodunitstrc-structure-key-field">GoodUnitStrc Structure Key Field</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#goodunitstrc-structure-key-field">GoodUnitStrc Structure Key Field</a>
+        </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2-h5-files">2. H5 Files</a>
+    <li class="toctree-l2"><a class="reference internal" href="#2-goodunitraw-files">2. GoodUnitRaw Files</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#contents">Contents</a>
+    <li class="toctree-l2"><a class="reference internal" href="#3-h5-files">3. H5 Files</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#contents">Contents</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-processed-files">4. Processed Files</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#variables">Variables</a>
+    </li>
+        </ul>
     </li>
     </ul>
                 </li>
@@ -110,10 +122,10 @@
 <p>For each recording session, three file types are provided:</p>
 <hr />
 <h3 id="1-goodunit-files">1. GoodUnit Files</h3>
-<p>Contains processed spike information and some meta-data.</p>
+<p>Contains processed spike information aligned to stimulus onset and some meta-data of the session.</p>
 <p><strong>Example Filename</strong>:<br />
 <code>GoodUnit_240629_JianJian_NSD1000_LOC_g2.mat</code></p>
-<h3 id="key-file-contents">Key File Contents</h3>
+<h4 id="key-file-contents">Key File Contents</h4>
 <table>
 <thead>
 <tr>
@@ -132,7 +144,7 @@
 </tr>
 <tr>
 <td><code>global_params.PsthRange</code></td>
-<td>Time points  for raster and PSTH below <br> Here: -50:1:400</td>
+<td>Time points for raster and PSTH below <br> Here: -50:1:400</td>
 </tr>
 <tr>
 <td><code>meta_data</code></td>
@@ -144,11 +156,15 @@
 </tr>
 <tr>
 <td><code>GoodUnitStrc</code></td>
-<td>Organized sturcture for each units</td>
+<td>Organized structure for each unit</td>
+</tr>
+<tr>
+<td><code>Trial_ML</code></td>
+<td>MonkeyLogic Trial Data</td>
 </tr>
 </tbody>
 </table>
-<h3 id="goodunitstrc-structure-key-field">GoodUnitStrc Structure Key Field</h3>
+<h4 id="goodunitstrc-structure-key-field">GoodUnitStrc Structure Key Field</h4>
 <table>
 <thead>
 <tr>
@@ -161,7 +177,7 @@
 <tr>
 <td><code>Raster</code></td>
 <td>[trial_idx × time_point]</td>
-<td>Spike raster matrix <br> typically 0 1, where 1 is one spike <br> could be 2 or lager for some MUA</td>
+<td>Spike raster matrix <br> typically 0 1, where 1 is one spike <br> could be 2 or larger for some MUA</td>
 </tr>
 <tr>
 <td><code>response_matrix_img</code></td>
@@ -179,22 +195,43 @@
 <td>Spike train time point relative to stimuli train</td>
 </tr>
 <tr>
-<td><code>waveform</code></td>
-<td>[n Chan × 61 Sample]</td>
-<td>Spike waveform</td>
+<td><code>waveformKS</code></td>
+<td>[n_Chan × 61_Sample]</td>
+<td>Spike waveform of Kilosort template</td>
+</tr>
+<tr>
+<td><code>waveformBC</code></td>
+<td>[n_Chan × 61_Sample]</td>
+<td>Spike waveform extracted by BombCell</td>
+</tr>
+<tr>
+<td><code>spikepos</code></td>
+<td>[1 × 2]</td>
+<td>Spike position along the shank</td>
+</tr>
+<tr>
+<td><code>KSidx</code></td>
+<td>[scalar]</td>
+<td>Kilosort output index</td>
 </tr>
 </tbody>
 </table>
-<p>note: <code>trial_idx</code> here correspond to all valid trials (i.e. <code>meta_data.trial_valid_idx(meta_data.trial_valid_idx~=0)</code>)</p>
+<p>note: <code>trial_idx</code> here corresponds to all valid trials (i.e. <code>meta_data.trial_valid_idx (meta_data.trial_valid_idx~=0)</code>).</p>
 <hr />
-<h3 id="2-h5-files">2. H5 Files</h3>
+<h3 id="2-goodunitraw-files">2. GoodUnitRaw Files</h3>
+<p>Contains unaligned, processed spike data. This version is preferable if you require unsegmented data.</p>
+<p><strong>Example Filename</strong>:<br />
+<code>GoodUnitRaw_251011_JianJian_NSD1000_LOC_g4.mat</code></p>
+<p>All key variables are the same as in the corresponding GoodUnit files, except for <code>UnitStrc</code>, which includes all units and does not exclude non-responsive units (i.e., the <a href="https://github.com/liyipeng-moon/Triple-N/blob/main/Preprocess/Util/PostProcess_function.m">third preprocessing step</a> was not performed).</p>
+<hr />
+<h3 id="3-h5-files">3. H5 Files</h3>
 <p>Better format for faster data access relative to matlab GoodUnitStrc.  Due to file size limit of the platform, you can generate them by yourself running the <code>S0_ConvertMatTOh5.m</code> in the preprocessing pipeline. 
 Fetch with matlab:</p>
 <pre><code>    h5read('xxx', '/field')
 </code></pre>
 <p><strong>Example Filename</strong>:<br />
 <code>ses01_240629_M1_2.h5</code></p>
-<h3 id="contents">Contents</h3>
+<h4 id="contents">Contents</h4>
 <table>
 <thead>
 <tr>
@@ -210,11 +247,6 @@ Fetch with matlab:</p>
 <td>Same as GoodUnitStrc</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
 <td><code>response_matrix_img</code></td>
 <td>[unit_num × image_idx × time_point]</td>
 <td>Same as GoodUnitStrc</td>
@@ -222,11 +254,11 @@ Fetch with matlab:</p>
 </tbody>
 </table>
 <hr />
-<h2 id="3-processed-files">3. Processed Files</h2>
-<p>Contains unit-wise processed information.</p>
+<h3 id="4-processed-files">4. Processed Files</h3>
+<p>Contains unit-wise processed information. See <a href="https://github.com/liyipeng-moon/Triple-N/blob/main/Script/code/analysis_S1_NSD_NC.m">analysis_S1_NSD_NC.m</a> which generates these data from .h5 files.  </p>
 <p><strong>Example Filename</strong>:<br />
 <code>Processed_ses01_240629_M1_2.mat</code></p>
-<h3 id="key-variables">Key Variables</h3>
+<h4 id="variables">Variables</h4>
 <table>
 <thead>
 <tr>
@@ -242,7 +274,7 @@ Fetch with matlab:</p>
 <td>d-prime for body, face, object categories from localizer</td>
 </tr>
 <tr>
-<td><code>best_t_time</code></td>
+<td><code>best_r_time1</code>, <code>best_r_time2</code></td>
 <td>[1 × unit_num]</td>
 <td>Time window with highest reliability</td>
 </tr>

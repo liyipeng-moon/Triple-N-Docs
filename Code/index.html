@@ -97,7 +97,7 @@
             <div class="section" itemprop="articleBody">
               
                 <h3 id="preprocess-code">Preprocess Code</h3>
-<p>code for spike sorting, preprocessing LFP and generate 'GoodUnit' fils can be found <a href="https://github.com/liyipeng-moon/Triple-N/tree/main/Preprocess">here</a>, which contains the preprocessing code for NNN data, as well as other datasets collected in BaoLab (PKU) using the <a href="https://github.com/liyipeng-moon/PassiveViewing_in_ML">Macaque Fixation task</a>.</p>
+<p>code for spike sorting, preprocessing LFP and generating 'GoodUnit' files can be found <a href="https://github.com/liyipeng-moon/Triple-N/tree/main/Preprocess">here</a>, which contains the preprocessing code for NNN data, as well as other datasets collected in BaoLab (PKU) using the <a href="https://github.com/liyipeng-moon/PassiveViewing_in_ML">Macaque Fixation task</a>.</p>
 <p><strong>Dependency: add the following tools to the <code>/util</code> directory:</strong><br />
 <a href="https://github.com/Julie-Fabre/bombcell/">BombCell</a>  <br />
 <a href="https://github.com/Julie-Fabre/prettify_matlab">prettify_matlab</a><br />
@@ -105,24 +105,25 @@
 <a href="https://github.com/kwikteam/npy-matlab">npy-matlab</a>  </p>
 <p><strong>Run <code>NSD_Process_pipeline.m</code> to go through 4 steps:</strong><br />
 1) Load_Data_function.m<br />
-This function extract basic information from the monkeylogic <code>.bhv</code> file, and the meta data from spikeglx <code>.meta</code>, extract event code from NI data, and check which trial is valid based on eye signal.<br />
+This function extracts basic information from the MonkeyLogic <code>.bhv</code> file, and the meta data from SpikeGLX <code>.meta</code>, extracts event code from NI data, and check which trial is valid based on eye signal.<br />
 Output: <code>META_YYMMDD_Subject_NSD1000_LOC.mat</code><br />
 1) PostProcess_function_raw.m<br />
-This function load the output of Kilosort4, and run BombCell to classify unit into noise, single unit, mua, and non-somatic unit.<br />
+This function loads the output of Kilosort4, and run BombCell to classify unit into noise, single unit, MUA, and non-somatic unit.<br />
 Output: <code>GoodUnitRaw*.mat</code><br />
 1) PostProcess_function.m<br />
-This function align the spike into image onset time, generating <code>GoodUnit</code> structure consisting raster data and PSTH data<br />
+This function aligns the spike time to image onset time, generating <code>GoodUnit</code> structure consisting of raster data and PSTH data<br />
 Output: <code>GoodUnit*.mat</code> <br />
 1) PostProcess_function_LFP.m<br />
-This function load LFP signal and align to image onset time.<br />
+This function loads LFP signal and align to image onset time.<br />
 Output: <code>GoodLFP*.mat</code>  </p>
-<p><strong>Run <code>S0_ConvertMatTOh5.m</code> to generate H5 file from GoodUnit</strong></p>
+<p><strong>Run <code>S0_ConvertMatTOh5.m</code> to generate H5 file from GoodUnit files</strong></p>
 <hr />
 <h3 id="paper-code">Paper code</h3>
-<p>code for analyze and generate figures in the paper can be found <a href="https://github.com/liyipeng-moon/Triple-N/tree/main/script">here</a>.</p>
+<p>code for analyzing and generating figures in the paper can be found <a href="https://github.com/liyipeng-moon/Triple-N/tree/main/Script">here</a>.
+some additional data is needed, they are located at <code>/others</code> in the data bank.</p>
 <hr />
 <h3 id="demo-code">Demo code</h3>
-<p>Several going-through demo for illustration of our data can be found <a href="https://github.com/liyipeng-moon/Triple-N/tree/main/demo">here</a>.</p>
+<p>Several walkthrough demo for illustration our data can be found <a href="https://github.com/liyipeng-moon/Triple-N/tree/main/Demo">here</a>.</p>
 <ul>
 <li>demo1, generating single unit raster plot for several images</li>
 <li>demo2, generating populational preference of interested ROI </li>

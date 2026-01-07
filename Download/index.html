@@ -50,7 +50,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#stimuli">Stimuli</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#raw-goodsunit">Raw GoodSUnit</a>
+    <li class="toctree-l2"><a class="reference internal" href="#raw-goodunit">Raw GoodUnit</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#generating-raw-h5-and-infomat">Generating Raw H5 and info.mat</a>
     </li>
@@ -105,31 +105,31 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="download-data">Download Data</h1>
-<p>Our raw data are hosted on Science Data Bank and can be accessed via the following (temporary) link. You may download individual files directly through your browser, or use FTP (e.g., FileZilla) for batch downloading. Hostname, port, and login information are provided in the <strong>Data File Download</strong> panel on the platform.</p>
-<p><a href="https://www.scidb.cn/en/"><strong>Triple-N Dataset at Science Data Bank</strong></a></p>
+<p>Our raw data are hosted on Science Data Bank (ScienceDB) and can be accessed via the following (temporary) link. You may download individual files directly through your browser, or use FTP (e.g., FileZilla) for batch downloading. Hostname, port, and login information are provided in the <strong>Data File Download</strong> panel on the platform.</p>
+<p><a href="https://www.scidb.cn/en/"><strong>Triple-N Dataset at ScienceDB</strong></a></p>
 <h3 id="raw-session-folder">Raw Session Folder</h3>
-<p>Due to the platform's file number limitations, each session folder has been compressed into a <code>.tar.gz</code> archive. For example:  </p>
-<pre><code>    Example files:  
+<p>Due to the platform's file count limitations, each session folder has been compressed into a <code>.tar.gz</code> archive. For example:  </p>
+<pre><code>    Example file:  
     Raw/SesFolder/240629.tar.gz
 </code></pre>
 <hr />
 <h3 id="stimuli">Stimuli</h3>
-<p>The shared1000 can be extracted with <a href="https://natural-scenes-dataset.s3-us-east-2.amazonaws.com/nsddata/experiments/nsd/nsd_stim_info_merged.csv">NSD Stim Info</a> and <a href="https://natural-scenes-dataset.s3-us-east-2.amazonaws.com/nsddata/stimuli/nsd/shared1000.tsv">Shared1000 Index</a>. For more details see <a href="https://cvnlab.slite.page/p/NKalgWd__F/Experiments">NSD document</a>. For convenience, we also provided stimuli resized to 227 * 227 pixels and 72 localizer stimuli: </p>
+<p>The shared1000 can be extracted with <a href="https://natural-scenes-dataset.s3-us-east-2.amazonaws.com/nsddata/experiments/nsd/nsd_stim_info_merged.csv">NSD Stim Info</a> and <a href="https://natural-scenes-dataset.s3-us-east-2.amazonaws.com/nsddata/stimuli/nsd/shared1000.tsv">Shared1000 Index</a>. For more details see <a href="https://cvnlab.slite.page/p/NKalgWd__F/Experiments">NSD documentation</a>. For convenience, we also provide stimuli resized to 227 * 227 pixels and 72 localizer stimuli: </p>
 <pre><code>    Data/StimuliNNN.zip
 </code></pre>
 <hr />
-<h3 id="raw-goodsunit">Raw GoodSUnit</h3>
+<h3 id="raw-goodunit">Raw GoodUnit</h3>
 <p>In our analysis pipeline, spiking data are stored in the <em>GoodUnit</em> files. You can download the sessions and directly load these files in MATLAB to inspect processed spike waveforms, raster data, and PSTHs.<br />
 A detailed description is provided in the <strong>ProcessedFiles</strong> section.  </p>
-<pre><code>    Example files:  
-    Raw/GoodStruct/GoodUnit_YYMMDD_Subject_NSD1000_LOC_gx.mat
+<pre><code>    Example file:  
+    Raw/GoodStructV2/GoodUnit_YYMMDD_Subject_NSD1000_LOC_gx.mat
 </code></pre>
 <hr />
 <h3 id="generating-raw-h5-and-infomat">Generating Raw H5 and info.mat</h3>
 <p>For figure generation in the NNN paper, the GoodUnit files were converted into <code>.h5</code> format for faster loading, with additional metadata saved in corresponding <code>*_info.mat</code> files. You need to run <code>S0_ConvertMatTOh5.m</code> from <a href="https://github.com/liyipeng-moon/Triple-N/tree/main/Preprocess">here</a> to generate these files. Instructions for working with these files can be found in the <strong>code</strong> section.</p>
-<pre><code>    Example files:  
-    **Raw/H5FILES/ses01_240629_M1_2.h5**  
-    **Raw/H5FILES/ses01_240629_M1_2_info.mat**
+<pre><code>    Example file:  
+    Raw/H5FILES/ses01_240629_M1_2.h5 
+    Raw/H5FILES/ses01_240629_M1_2_info.mat
 </code></pre>
               
             </div>
