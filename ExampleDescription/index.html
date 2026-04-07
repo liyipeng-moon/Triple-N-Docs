@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Acknowledgement - Triple-N Dataset Documentation</title>
+    <title>Example description - Triple-N Dataset Documentation</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Acknowledgement";
-        var mkdocs_page_input_path = "Acknowledgement.md";
+        var mkdocs_page_name = "Example description";
+        var mkdocs_page_input_path = "ExampleDescription.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -71,20 +71,18 @@
                 <li class="toctree-l1"><a class="reference internal" href="../DataAcquisitionSoftware/">Data Acquisition Software</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../ExampleDescription/">Example description</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Example description</a>
+    <ul class="current">
+    </ul>
                 </li>
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../FAQ/">FAQ</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">Acknowledgement</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#funding">Funding:</a>
-    </li>
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Acknowledgement/">Acknowledgement</a>
                 </li>
               </ul>
       </div>
@@ -101,7 +99,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">Acknowledgement</li>
+      <li class="breadcrumb-item active">Example description</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -110,21 +108,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="acknowledgement">Acknowledgement</h1>
-<p>We thank National Center for Protein Sciences at Peking University in Beijing, China and Ms. Chunfang Yan for helping with collecting MRI and fMRI data. We are particularly grateful to Doris Tsao and members of the Tsao Lab for their insightful discussions and support.</p>
-<h3 id="funding">Funding:</h3>
-<p>National Science and Technology Innovation 2030 Major Projects, STI2030-Major Projects grant 2022ZD0204800.<br />
-Science Fund for Creative Research Groups of the National Natural Science Foundation of China T2421004.<br />
-Natural Science Foundation of China Grant NSFC32271081.<br />
-Natural Science Foundation of China Grant NSFC3223000016.<br />
-Natural Science Foundation of China Grant NSFC32200857.<br />
-China Postdoctoral Science Foundation Grant 2021M7400004.<br />
-China Postdoctoral Science Foundation Grant 2022T150021.  </p>
+                <p>Users of the Triple-N dataset can describe the  data as follows:</p>
+<h3 id="triple-n-dataset">Triple-N dataset</h3>
+<p>We used the Triple-N dataset (Li et al., 2025), in which electrophysiological recordings were obtained from five macaque participants during passive fixation. Each macaque viewed 1,000 natural scene images from the NSD dataset (Allen et al., 2021). Stimuli were presented only after the animals maintained fixation for at least 300 ms. Each image was displayed for 150 ms, followed by a 150 ms blank interval, resulting in 4–8 repetitions per image.</p>
+<p>Neuronal activity was recorded using Neuropixels probes. Preprocessing included phase-shifting, filtering, common referencing, and spike sorting. Units were classified as visually responsive if they exhibited a significant change in firing rate (p &lt; 0.001, Wilcoxon rank-sum test) between a baseline window (–25 to 30 ms relative to stimulus onset) and post-stimulus response windows (50–120 ms or 120–240 ms). Neural reliability for each neuron was estimated by first determining the optimal response window post-stimulus, splitting trials into two halves, and calculating the Pearson correlation between them. The resulting correlation was adjusted using the Spearman–Brown correction, and only units with reliability &gt; 0.4 were included in further analyses.</p>
+<p>Recording targets encompassed high-level cortical areas along the posterior-to-anterior axis of ventral stream (from V1, V2, V4, PIT to AIT, according to your selection), including category-selective regions identified via fMRI (faces, bodies, objects, and scenes), regions without clear category selectivity (“unknown” areas), as well as earlier visual cortex. In total, X units were retained for downstream analyses.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../FAQ/" class="btn btn-neutral float-left" title="FAQ"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../DataAcquisitionSoftware/" class="btn btn-neutral float-left" title="Data Acquisition Software"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../FAQ/" class="btn btn-neutral float-right" title="FAQ">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -147,8 +141,10 @@ China Postdoctoral Science Foundation Grant 2022T150021.  </p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../FAQ/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../DataAcquisitionSoftware/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../FAQ/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
