@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>FAQ - Triple-N Dataset Documentation</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "FAQ";
+        var mkdocs_page_input_path = "FAQ.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Triple-N Dataset Documentation
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">General</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Download/">How to get data</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Start/">Quick start</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../RawData/">Raw Data</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../ProccessedFiles/">Processed Files</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../MetaData/">MetaData and Location</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Code/">Code</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../DataAcquisitionSoftware/">Data Acquisition Software</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">FAQ</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#question-i-want-to-draw-human-surface-map-as-figure-4-in-dataset-paper">Question: I want to draw human surface map as Figure 4 in dataset paper.</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#q-i-have-a-prediction-from-the-triple-n-dataset-but-would-like-in-vivo-validation-instead-of-an-in-silico-experiment">Q: I have a prediction from the triple-N dataset but would like in vivo validation instead of an in silico experiment.</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#q-how-was-the-surface-illustration-in-figure-s1-generated">Q: How was the surface illustration in Figure S1 generated?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#q-will-the-triple-n-dataset-be-expanded-in-the-future">Q: Will the triple-N dataset be expanded in the future?</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Acknowledgement/">Acknowledgement</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Triple-N Dataset Documentation</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">FAQ</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="frequently-asked-questions">Frequently Asked Questions</h1>
+<p>Below are some questions we have received. If anything is unclear, please feel free to <a href="https://github.com/liyipeng-moon/Triple-N/issues">raise an issue</a>, and we will post the answer here.</p>
+<h6 id="question-i-want-to-draw-human-surface-map-as-figure-4-in-dataset-paper">Question: I want to draw human surface map as Figure 4 in dataset paper.</h6>
+<ul>
+<li>The reconstructed human surface is part of NSD dataset, and you can access it <a href="https://natural-scenes-dataset.s3.amazonaws.com/index.html#nsddata/freesurfer/subj01/surf/">here (Subject 5)</a>. In our paper, we use functional beta (extracted and saved in Data/others/FMRI.zip) and the structural surfaces in each subject’s native space (fsnative). Most of the computations were performed in MATLAB, and the visualization of statistical maps on the cortical surface was carried out using python toolbox Nilearn. Example notebooks can be found [here] and [here]. Another great tool to plot surface stats map is <a href="https://gallantlab.org/pycortex/">pycortex</a>.</li>
+</ul>
+<h6 id="q-i-have-a-prediction-from-the-triple-n-dataset-but-would-like-in-vivo-validation-instead-of-an-in-silico-experiment">Q: I have a prediction from the triple-N dataset but would like in vivo validation instead of an in silico experiment.</h6>
+<ul>
+<li>Thank you for your interest! Researchers are welcome to build on findings from our dataset and generate new hypotheses. For questions that can be addressed using the same experimental setup—specifically, experiments where monkeys fixate on images without requiring additional behavioral tasks—it is possible to contact us (<a href="pbao@pku.edu.cn">Pinglei Bao</a>) to discuss potential collaborations and further validation on the same experimental platform. This approach allows new insights to be tested efficiently while leveraging the existing dataset and infrastructure.</li>
+</ul>
+<h6 id="q-how-was-the-surface-illustration-in-figure-s1-generated">Q: How was the surface illustration in Figure S1 generated?</h6>
+<ul>
+<li>For each recording site, we first registered the structural scan containing the tungsten electrodes to the high-resolution structural scan using AFNI’s <code>align_epi_anat.py</code>. The registered image was then imported into 3D Slicer, where the crosshair was manually aligned to the probe to read the expected electrode coordinates. These coordinates were subsequently transformed to the NMT template space using the registration files obtained from the <code>@animal_warper</code> command, which applies a three-step process to align the high-resolution structural scan to the NMT template. The resulting electrode coordinates on the template are stored in <code>AreaXYZ.xls</code>.</li>
+<li>To generate Figure S1, we opened the NMT template in AFNI, navigated to the electrode coordinates, and projected them onto the cortical surface using SUMA. More details on this procedure can be found in the downloaded markdown file though <a href="https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/nonhuman/macaque_tempatl/template_nmtv2.html">here</a>.</li>
+</ul>
+<h6 id="q-will-the-triple-n-dataset-be-expanded-in-the-future">Q: Will the triple-N dataset be expanded in the future?</h6>
+<ul>
+<li>No, the current triple-N dataset is complete and includes 90 sessions (from V1, V2, V4, PIT, CIT to AIT). However, we are carrying out related projects on visual coding using the same experimental protocol and platform, with more specific focuses, such as category-specific coding and the perceptual significance of IT responses. The resulting datasets will be made available in the future as a supplement to the triple-N dataset, analogous to how the <a href="https://www.nature.com/articles/s41467-026-69345-9">NSD-OOD dataset</a> complements NSD-Core.</li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../DataAcquisitionSoftware/" class="btn btn-neutral float-left" title="Data Acquisition Software"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Acknowledgement/" class="btn btn-neutral float-right" title="Acknowledgement">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../DataAcquisitionSoftware/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Acknowledgement/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
