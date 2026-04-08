@@ -66,6 +66,12 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Code</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#preprocess-code">Preprocess Code</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#paper-code">Paper code</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#demo-code">Demo code</a>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -108,13 +114,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h3 id="preprocess-code">Preprocess Code</h3>
+                <h1 id="code">Code</h1>
+<p>In our codebase, we separate the <strong>Preprocess Code</strong> and the <strong>Paper Code</strong>, as well as some <strong>Demo Code</strong> for quick start, as outlined below.</p>
+<h2 id="preprocess-code">Preprocess Code</h2>
 <p>code for spike sorting, preprocessing LFP and generating 'GoodUnit' files can be found <a href="https://github.com/liyipeng-moon/Triple-N/tree/main/Preprocess">here</a>, which contains the preprocessing code for NNN data, as well as other datasets collected in BaoLab (PKU) using the <a href="https://github.com/liyipeng-moon/PassiveViewing_in_ML">Macaque Fixation task</a>.</p>
-<p><strong>Dependency: add the following tools to the <code>/util</code> directory:</strong><br />
-<a href="https://github.com/Julie-Fabre/bombcell/">BombCell</a>  <br />
-<a href="https://github.com/Julie-Fabre/prettify_matlab">prettify_matlab</a><br />
-<a href="https://www.mathworks.com/matlabcentral/fileexchange/26311-raacampbell-shadederrorbar">ShadedErrorBar</a><br />
-<a href="https://github.com/kwikteam/npy-matlab">npy-matlab</a>  </p>
 <p><strong>Run <code>NSD_Process_pipeline.m</code> to go through 4 steps:</strong><br />
 1) Load_Data_function.m<br />
 This function extracts basic information from the MonkeyLogic <code>.bhv</code> file, and the meta data from SpikeGLX <code>.meta</code>, extracts event code from NI data, and check which trial is valid based on eye signal.<br />
@@ -127,18 +130,30 @@ This function aligns the spike time to image onset time, generating <code>GoodUn
 Output: <code>GoodUnit*.mat</code> <br />
 1) PostProcess_function_LFP.m<br />
 This function loads LFP signal and align to image onset time.<br />
-Output: <code>GoodLFP*.mat</code>  </p>
-<p><strong>Run <code>S0_ConvertMatTOh5.m</code> to generate H5 file from GoodUnit files</strong></p>
+Output: <code>GoodLFP*.mat</code><br />
+<strong>Run <code>S0_ConvertMatTOh5.m</code> to generate H5 file from GoodUnit files</strong></p>
 <hr />
-<h3 id="paper-code">Paper code</h3>
+<h2 id="paper-code">Paper code</h2>
 <p>code for analyzing and generating figures in the paper can be found <a href="https://github.com/liyipeng-moon/Triple-N/tree/main/Script">here</a>.
-some additional data is needed, they are located at <code>/others</code> in the data bank.</p>
+Some additional data is needed, they are located at <code>/others</code> in the data bank.</p>
+<p>You can run CombinedCode.m to go through analysis and figures related to triple-N paper.</p>
+<p><strong>Dependency</strong>
+<a href="https://github.com/cvnlab/GSN">GSN toolbox</a><br />
+<a href="https://github.com/kjamison/colormap_matplotlib_matlab">colormap_matplotlib</a><br />
+<a href="https://github.com/raacampbell/shadedErrorBar">shadedErrorBar</a><br />
+<a href="https://github.com/kwikteam/npy-matlab">npy-matlab</a><br />
+<a href="https://github.com/bastibe/Violinplot-Matlab/">violinplot</a><br />
+<a href="https://github.com/Julie-Fabre/bombcell/">BombCell</a>  </p>
+<p><strong>related to plot_EF2_cd.ipynb</strong>
+Since <code>npy-matlab</code> cannot load structured <code>.npy</code> files, we provide a Jupyter notebook for visualizing probe drift.
+You can install Kilosort4 following the instructions in <a href="https://github.com/liyipeng-moon/Triple-N/tree/main/Preprocess">here</a>.</p>
 <hr />
-<h3 id="demo-code">Demo code</h3>
+<h2 id="demo-code">Demo code</h2>
 <p>Several walkthrough demo for illustration our data can be found <a href="https://github.com/liyipeng-moon/Triple-N/tree/main/Demo">here</a>.</p>
 <ul>
-<li>demo1, generating single unit raster plot for several images</li>
-<li>demo2, generating populational preference of interested ROI </li>
+<li>demo1.m, generating single unit raster plot for several images</li>
+<li>demo2.m, generating populational preference of interested ROI </li>
+<li>Load_GoodUnit.py, python code for loading Goodunit data  </li>
 </ul>
 <hr />
               
