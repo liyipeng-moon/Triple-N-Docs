@@ -50,6 +50,12 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">Quick start</a>
     <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#processed">Processed</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#raw">Raw</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#others">others</a>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -108,7 +114,27 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="quick-start">Quick start</h1>
+                <p>This page provides a compact overview of the Triple-N dataset, focusing on how the data are organized, which files are most important for analysis, and what users should download first. </p>
+<h2 id="main-data-components">Main data components</h2>
+<p>The current ScienceDB release is organized into three top-level folders: <code>Processed</code>, <code>Raw</code>, and <code>others</code>.</p>
+<h4 id="processed">Processed</h4>
+<p><code>Processed</code> contains compact session-level summary files, with one file per recording session. These files are designed as analysis-oriented outputs rather than full raw recordings. In general, this part of the release stores per-unit summary measures and response summaries that are convenient for downstream statistical analyses, selectivity analyses, and quick session-level screening.</p>
+<h4 id="raw">Raw</h4>
+<p><code>Raw</code> contains the main session-wise neural data products and their higher-dimensional exports. In the current release, it is further divided into several subfolders:</p>
+<ul>
+<li><code>GoodUnit</code> - Session-wise unit files that store the main spike-aligned neural response data together with unit properties and session metadata. This is the most complete per-unit representation for many downstream analyses.</li>
+<li><code>GoodUnitRaw</code> - Session-wise unit files that preserve a less reduced version of the unit-level outputs. These files are useful when users want richer intermediate data rather than only compact summaries.</li>
+<li><code>GoodLFP</code> - Session-wise local field potential files. This part of the release is intended for analyses of trial-aligned LFP responses and associated recording metadata.</li>
+<li><code>H5FILES</code> - HDF5-based session exports for efficient loading of large response arrays. These files are paired with companion metadata files and provide a faster, more array-oriented access path than the MATLAB struct-based files.</li>
+<li><code>SessionFolder</code> - Session-wise original data, directly copied from the recording system, serve as input to the preprocessing pipeline. Currently, each session folder is compressed as a <code>.tar.gz</code> archive and can be downloaded from the raw section of the dataset link.  </li>
+</ul>
+<p>Overall, <code>Raw</code> is still organized by session, but within each session it separates spike-based data, LFP-based data, and fast-loading array exports into different file groups.</p>
+<h4 id="others">others</h4>
+<p><code>others</code> contains supporting resources that are shared across sessions rather than tied to a single recording. In general, this folder includes auxiliary metadata tables, image- or stimulus-related resources, model-feature packages, and other companion files that help interpret or align the neural data. It is the main place to look for cross-session annotations and supplementary materials rather than the core session-wise neural response files.</p>
+<h2 id="recommended-download-strategy">Recommended download strategy</h2>
+<p>Triple-N is best downloaded based on analysis goals rather than as a complete archive, as many users do not need every component of the release. For most use cases, the <code>Processed</code> and <code>Raw/GoodUnit</code> directories provide the lightest entry point and are typically sufficient. These include compact session-level outputs, per-unit summary measures, detailed spike-aligned responses, unit properties, and session metadata.  </p>
+<p>For large-scale workflows where loading speed is critical, Raw/H5FILES offers a more efficient, array-based format and is often the preferred choice.  </p>
+<p>The SessionFolder-level data are substantially larger (~3 TB) and are primarily intended for researchers who wish to re-run spike sorting, refine eye fixation detection, or recompute quality metrics.  </p>
               
             </div>
           </div><footer>
