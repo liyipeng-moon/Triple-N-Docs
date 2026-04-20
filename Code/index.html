@@ -134,19 +134,24 @@ Output: <code>GoodLFP*.mat</code><br />
 <strong>Run <code>S0_ConvertMatTOh5.m</code> to generate H5 file from GoodUnit files</strong></p>
 <p>Our lab is also working on transferring and testing the preprocessing code to Python: <a href="https://github.com/GongZhengxin/pynpxpipe">pynpxpipe</a>. It may take some time before we can confirm that the two pipelines produce nearly identical output. For now, please use and modify matlab version for re-running the preprocess pipeline.</p>
 <h2 id="paper-code">Paper code</h2>
-<p>code for analyzing and generating figures in the paper can be found <a href="https://github.com/liyipeng-moon/Triple-N/tree/main/Script">here</a>.
-Some additional data is needed, they are located at <code>/others</code> in the data bank.</p>
-<p>You can run CombinedCode.m to go through analysis and figures related to triple-N paper.</p>
-<p><strong>Dependency</strong>
+<p>code for analyzing and generating figures in the paper can be found <a href="https://github.com/liyipeng-moon/Triple-N/tree/main/Script">here</a>.</p>
+<p>Run CombinedCode.m to go through all figures related to triple-N paper. <br />
+Note: Some additional data is needed, please extract others/FMRI.zip and others/ModelFeature.zip before running human- and model- related analysis</p>
+<p><strong>Dependency</strong><br />
 <a href="https://github.com/cvnlab/GSN">GSN toolbox</a><br />
 <a href="https://github.com/kjamison/colormap_matplotlib_matlab">colormap_matplotlib</a><br />
 <a href="https://github.com/raacampbell/shadedErrorBar">shadedErrorBar</a><br />
 <a href="https://github.com/kwikteam/npy-matlab">npy-matlab</a><br />
 <a href="https://github.com/bastibe/Violinplot-Matlab/">violinplot</a><br />
 <a href="https://github.com/Julie-Fabre/bombcell/">BombCell</a>  </p>
+<p><strong>Python version</strong><br />
+Here is the python code to reproduce main result from our data, written by Kesheng Wang:
+<a href="https://github.com/JustMuteAll/TripleNpy/tree/main">TripleNpy</a></p>
 <p><strong>related to plot_EF2_cd.ipynb</strong>
 Since <code>npy-matlab</code> cannot load structured <code>.npy</code> files, we provide a Jupyter notebook for visualizing probe drift.
 You can install Kilosort4 following the instructions in <a href="https://github.com/liyipeng-moon/Triple-N/tree/main/Preprocess">here</a>.</p>
+<p><strong>related to plot_F4_PY_plot_surface_data.ipynb</strong><br />
+This is notebook to plot any stats into human brain surface. You need to download the subjects' surface file before plotting stats on it.</p>
 <hr />
 <h2 id="demo-code">Demo code</h2>
 <p>Several walkthrough demo for illustration our data can be found <a href="https://github.com/liyipeng-moon/Triple-N/tree/main/Demo">here</a>.</p>

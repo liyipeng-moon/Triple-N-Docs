@@ -64,17 +64,15 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#2-goodunitraw-files">2. GoodUnitRaw Files</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#3-h5-files">3. H5 Files</a>
+    <li class="toctree-l2"><a class="reference internal" href="#3-goodlfp-files">3. GoodLFP Files</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-h5-files">4. H5 Files</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#contents">Contents</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#4-processed-files">4. Processed Files</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#variables">Variables</a>
-    </li>
-        </ul>
+    <li class="toctree-l2"><a class="reference internal" href="#_1"></a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#5-session-folder">5. Session Folder</a>
     </li>
@@ -132,8 +130,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h2 id="file-structure">File Structure</h2>
-<p>For each recording session, 5 file types are provided into each folder:</p>
+                <h2 id="file-structure-raw">File Structure - Raw</h2>
+<p>For each recording session, 5 file types are provided into each <code>Raw/*</code> folder:</p>
 <hr />
 <h3 id="1-goodunit-files">1. GoodUnit Files</h3>
 <p>Contains processed spike information aligned to stimulus onset and some meta-data of the session.</p>
@@ -238,7 +236,8 @@
 <code>GoodUnitRaw_251011_JianJian_NSD1000_LOC_g4.mat</code></p>
 <p>All key variables are the same as in the corresponding GoodUnit files, except for <code>UnitStrc</code>, which includes all units and does not exclude non-responsive units (i.e., the <a href="https://github.com/liyipeng-moon/Triple-N/blob/main/Preprocess/Util/PostProcess_function.m">third preprocessing step</a> was not performed).</p>
 <hr />
-<h3 id="3-h5-files">3. H5 Files</h3>
+<h3 id="3-goodlfp-files">3. GoodLFP Files</h3>
+<h3 id="4-h5-files">4. H5 Files</h3>
 <p>Better format for faster data access relative to matlab GoodUnitStrc.  Due to file size limit of the platform, you can generate them by yourself running the <code>S0_ConvertMatTOh5.m</code> in the preprocessing pipeline. 
 Fetch with matlab:</p>
 <pre><code>    h5read('xxx', '/field')
@@ -268,8 +267,12 @@ Fetch with matlab:</p>
 </tbody>
 </table>
 <hr />
-<h3 id="4-processed-files">4. Processed Files</h3>
-<p>Contains unit-wise processed information. See <a href="https://github.com/liyipeng-moon/Triple-N/blob/main/Script/code/analysis_S1_NSD_NC.m">analysis_S1_NSD_NC.m</a> which generates these data from .h5 files.  </p>
+<h3 id="_1"></h3>
+<h3 id="5-session-folder">5. Session Folder</h3>
+<p>At present, each session folder is compressed separately and made available through individual download links. Further details can be found <a href="https://liyipeng-moon.github.io/Triple-N-Docs/SessionFolder/">here</a>.</p>
+<h2 id="file-structure-processed">File Structure - Processed</h2>
+<p>Processed Files
+Contains unit-wise processed information. See <a href="https://github.com/liyipeng-moon/Triple-N/blob/main/Script/code/analysis_S1_NSD_NC.m">analysis_S1_NSD_NC.m</a> which generates these data from .h5 files.  </p>
 <p><strong>Example Filename</strong>:<br />
 <code>Processed_ses01_240629_M1_2.mat</code></p>
 <h4 id="variables">Variables</h4>
@@ -324,8 +327,6 @@ Fetch with matlab:</p>
 </tr>
 </tbody>
 </table>
-<h3 id="5-session-folder">5. Session Folder</h3>
-<p>At present, each session folder is compressed separately and made available through individual download links. Further details can be found <a href="https://liyipeng-moon.github.io/Triple-N-Docs/SessionFolder/">here</a>.</p>
               
             </div>
           </div><footer>
